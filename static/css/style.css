@@ -1,0 +1,42 @@
+#drop-zone {
+    transition: all 0.3s ease;
+}
+
+#drop-zone:hover {
+    border-color: #3B82F6;
+}
+
+#drop-zone.border-blue-500 {
+    border-color: #3B82F6;
+    background-color: #EBF5FF;
+}
+
+#result {
+    background-color: #F3F4F6;
+    border: 1px solid #E5E7EB;
+}
+
+/* Loading animation for the button */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    top: 50%;
+    left: 50%;
+    margin: -0.5rem 0 0 -0.5rem;
+    border: 2px solid #ffffff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+} 

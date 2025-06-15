@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="columns is-centered">
+    <div class="column is-half">
+        <div class="box">
+            <h1 class="title has-text-centered">Analysis Result</h1>
+            
+            <div class="notification {% if 'normal' in prediction.lower() %}is-success{% else %}is-warning{% endif %}">
+                <h2 class="subtitle">Prediction:</h2>
+                <p class="is-size-4">{{ prediction }}</p>
+            </div>
+            
+            <div class="notification is-info">
+                <h2 class="subtitle">Confidence:</h2>
+                <p class="is-size-4">{{ "%.2f"|format(confidence) }}%</p>
+            </div>
+            
+            <div class="field mt-4">
+                <div class="control">
+                    <a href="{{ url_for('home') }}" class="button is-primary is-fullwidth">
+                        <span class="icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </span>
+                        <span>Analyze Another Image</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

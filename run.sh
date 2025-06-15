@@ -1,8 +1,3 @@
 docker build -t cancer-detection .
- docker run -it --rm \
-  -p 8888:8888 \
-  -v /Users/tamimdostyar/Documents/coding_stuff/cancer_detection/datasets:/root/.cache/kagglehub/datasets \
-  -v /Users/tamimdostyar/Documents/coding_stuff/cancer_detection/datasets:/app/datasets \
-  -v "$(pwd)/notebooks":/notebooks \
-  cancer-detection \
-  jupyter notebook --ip=0.0.0.0 --no-browser --NotebookApp.token='' --NotebookApp.password='' --allow-root
+docker rm cancer_detection && docker run -it --name cancer_detection cancer_detection /bin/bash
+docker exec cancer_detection jupyter notebook --allow-root --port 8001 --no-browser --NotebookApp.token='' --ip=0.0.0.0
