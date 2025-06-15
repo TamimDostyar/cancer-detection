@@ -5,6 +5,16 @@
     <div class="column is-half">
         <div class="box">
             <h1 class="title has-text-centered">Upload Medical Image</h1>
+            <div class="content mb-4">
+                <p class="has-text-centered">This system can detect the following conditions:</p>
+                <ul>
+                    <li>Lung Adenocarcinoma</li>
+                    <li>Lung Benign Tissue (Normal)</li>
+                    <li>Lung Squamous Cell Carcinoma</li>
+                    <li>Colon Adenocarcinoma</li>
+                    <li>Colon Benign Tissue (Normal)</li>
+                </ul>
+            </div>
             <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
                 <div class="file has-name is-fullwidth">
                     <label class="file-label">
@@ -49,4 +59,4 @@
         }
     });
 </script>
-{% endblock %} 
+{% endblock %}
